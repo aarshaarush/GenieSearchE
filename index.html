@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useful Links</title>
+    <title>Genie Search Engine</title>
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTllSox10xC5djQIGeKxq-0m1aYva-qHhXZA&s" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,80 +12,55 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        main {
-            max-width: 800px;
-            margin: 20px auto;
+            background-color: #4A90E2;
+            color: white;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         h1 {
-            color: #333;
+            margin: 0;
+            font-size: 2.5em;
         }
-        p {
-            color: #555;
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            color: #007bff;
-            text-decoration: none;
-            padding: 10px;
-            border: 1px solid #007bff;
-            border-radius: 5px;
+        .search-container {
+            margin: 40px auto;
+            max-width: 600px;
             text-align: center;
         }
-        a:hover {
-            background-color: #007bff;
-            color: #fff;
+        input[type="text"] {
+            width: 80%;
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #4A90E2;
+            border-radius: 25px;
+            outline: none;
         }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        input[type="text"]:focus {
+            border-color: #007BFF;
         }
-        .clock {
-            font-size: 1.5em;
-            margin: 20px 0;
-            text-align: center;
-            color: #333;
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #007BFF;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="yt"><h1>Useful Links</h1></div>
+        <h1>Genie Search Engine</h1>
     </header>
-    <main>
-        <div class="clock" id="clock">Loading...</div>
-        <p>Here are some links you might find useful:</p>
-        <a href="https://www.youtube.com" target="_blank">YouTube</a>
-        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
-        <a href="https://x.com" target="_blank">X (formerly Twitter)</a>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Simple Website</p>
-    </footer>
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const options = { hour: '2-digit', minute: '2-digit', second: '2-digit' };
-            const timeString = now.toLocaleTimeString([], options);
-            document.getElementById('clock').textContent = timeString;
-        }
-        setInterval(updateClock, 1000);
-        updateClock(); // Initial call to display clock immediately
-    </script>
-    
+    <div class="search-container">
+        <form id="searchForm" action="https://duckduckgo.com/" method="get" target="_blank">
+            <input type="text" name="q" placeholder="What can I help you find?" required />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
 </html>
